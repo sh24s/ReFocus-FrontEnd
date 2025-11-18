@@ -24,6 +24,7 @@ import Log from "./pages/app/Log";
 import Challenges from "./pages/app/Challenges";
 import Community from "./pages/app/Community";
 import Profile from "./pages/app/Profile";
+import KickoffSurvey from "./pages/app/KickoffSurvey";
 
 // Coach Pages
 import CoachDashboard from "./pages/coach/Dashboard";
@@ -62,6 +63,7 @@ const AppContent = () => {
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
 
           {/* End User Routes */}
+          <Route path="/app/kickoff-survey" element={<KickoffSurvey />} />
           <Route path="/app/onboarding" element={<Onboarding />} />
           <Route path="/app/goal" element={<Goal />} />
           <Route path="/app/dashboard" element={<EndUserDashboard />} />
