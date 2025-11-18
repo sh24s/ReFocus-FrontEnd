@@ -24,6 +24,7 @@ import Goal from "./pages/app/Goal";
 import Session from "./pages/app/Session";
 import Log from "./pages/app/Log";
 import Challenges from "./pages/app/Challenges";
+import Community from "./pages/app/Community";
 import Profile from "./pages/app/Profile";
 
 // Coach Pages
@@ -68,6 +69,7 @@ const AppContent = () => {
           <Route path="/app/session" element={<Session />} />
           <Route path="/app/log" element={<Log />} />
           <Route path="/app/challenges" element={<Challenges />} />
+          <Route path="/app/community" element={<Community />} />
           <Route path="/app/profile" element={<Profile />} />
 
           {/* Coach Routes */}
