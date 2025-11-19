@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
+import { Button } from '../components/ui/button';
+import { Card } from '../components/ui/card';
 import { ArrowRight, CheckCircle2, Zap, Target, Trophy } from 'lucide-react';
 import { useState } from 'react';
 
