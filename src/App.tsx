@@ -1,18 +1,21 @@
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
+import "./global.css";
+
+import { Toaster } from "src/components/ui/toaster";
+import { createRoot } from "react-dom/client";
+import { Toaster as Sonner } from "src/components/ui/sonner";
+import { TooltipProvider } from "src/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { AuthProvider, useAuthContext } from "@/contexts/AuthContext";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
+import { AuthProvider, useAuthContext } from "src/contexts/AuthContext";
+import { Header } from "src/components/Header";
+import { Footer } from "src/components/Footer";
 
 // Public Pages
 import Landing from "./pages/Landing";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import About from "./pages/About";
-import PrivacyPolicy from "./pages/PrivacyPolicy";
+import Privacy from "./pages/Privacy";
 import NotFound from "./pages/NotFound";
 
 // End User Pages
@@ -44,6 +47,9 @@ import Games from "./pages/dev/Games";
 import GameDetail from "./pages/dev/GameDetail";
 import Versions from "./pages/dev/Versions";
 import DevAnalytics from "./pages/dev/Analytics";
+import GameEdit from "./pages/dev/GameEdit";
+import DevDashboard from "./pages/dev/Dashboard";
+import Settings from "./pages/dev/Settings";
 
 const queryClient = new QueryClient();
 
@@ -60,18 +66,20 @@ const AppContent = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/about" element={<About />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/privacy" element={<Privacy />} />
 
-          {/* End User Routes */}
-          <Route path="/app/kickoff-survey" element={<KickoffSurvey />} />
+
+            {/* End User Routes */}
+            <Route path="/app/kickoff-survey" element={<KickoffSurvey />} />
+            <Route path="/app/community" element={<Community />} />
           <Route path="/app/onboarding" element={<Onboarding />} />
           <Route path="/app/goal" element={<Goal />} />
           <Route path="/app/dashboard" element={<EndUserDashboard />} />
           <Route path="/app/session" element={<Session />} />
           <Route path="/app/log" element={<Log />} />
           <Route path="/app/challenges" element={<Challenges />} />
-          <Route path="/app/community" element={<Community />} />
           <Route path="/app/profile" element={<Profile />} />
+
 
           {/* Coach Routes */}
           <Route path="/coach/dashboard" element={<CoachDashboard />} />
@@ -91,6 +99,9 @@ const AppContent = () => {
           <Route path="/dev/game/:id" element={<GameDetail />} />
           <Route path="/dev/versions" element={<Versions />} />
           <Route path="/dev/analytics" element={<DevAnalytics />} />
+            <Route path="/dev/GameEdit" element={<GameEdit />} />
+            <Route path="/dev/Dashboard" element={<DevDashboard />} />
+            <Route path="/dev/Settings" element={<Settings />} />
 
           {/* Catch-all 404 Route */}
           <Route path="*" element={<NotFound />} />
@@ -115,4 +126,4 @@ const App = () => (
   </QueryClientProvider>
 );
 
-export default App;
+createRoot(document.getElementById("root")!).render(<App />);
