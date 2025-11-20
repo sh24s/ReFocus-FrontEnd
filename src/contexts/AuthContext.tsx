@@ -26,6 +26,7 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
+// survey
 export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const auth = useAuth();
   const [surveyAnswers, setSurveyAnswersState] = useState<SurveyAnswers | null>(() => {
