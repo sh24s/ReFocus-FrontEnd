@@ -78,7 +78,7 @@ export const Footer: React.FC = () => {
         </div>
         <div className="border-t border-border pt-8">
           <p className="text-center text-muted-foreground text-sm">
-            © 2024 ReFocus. All rights reserved.
+            © 2025 ReFocus. All rights reserved.
           </p>
         </div>
       </div>
