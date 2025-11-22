@@ -1,3 +1,4 @@
+//the placeholder is updated
 import { useLocation } from "react-router-dom";
 import { Card } from "@/components/ui/card";  
 
